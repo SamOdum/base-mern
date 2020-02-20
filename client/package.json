@@ -1,7 +1,7 @@
 {
   "name": "minimal-webpack-react",
   "version": "1.0.0",
-  "description": "Boilerplate for react and webpack",
+  "description": "Base react and webpack boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --open",
@@ -50,16 +50,16 @@
     "npm": ">=3"
   },
   "dependencies": {
-    "@babel/plugin-transform-react-constant-elements": "7.8.3",
-    "@babel/plugin-transform-react-inline-elements": "7.8.3",
-    "babel-plugin-transform-react-pure-class-to-function": "1.0.1",
-    "babel-plugin-transform-react-remove-prop-types": "0.4.24",
-    "core-js": "3.6.4",
-    "lodash": "4.17.15",
-    "prop-types": "15.7.2",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-hot-loader": "4.12.19"
+    "@babel/plugin-transform-react-constant-elements": "^7.8.3",
+    "@babel/plugin-transform-react-inline-elements": "^7.8.3",
+    "babel-plugin-transform-react-pure-class-to-function": "^1.0.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "core-js": "^3.6.4",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hot-loader": "^4.12.19"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"

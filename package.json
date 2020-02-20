@@ -4,6 +4,9 @@
 	"description": "A MERN starter/boilerplate",
 	"main": "index.js",
 	"scripts": {
+		"client": "npm run start --prefix client",
+		"server": "npm run dev --prefix server",
+		"start": "concurrently \"npm run server\" \"npm run client\" ",
 		"test": "eslint --fix **/src/",
 		"precommit": "npm test",
 		"prepush": "npm test",
@@ -24,6 +27,7 @@
 	},
 	"homepage": "https://github.com/samodum/base-mern#readme",
 	"devDependencies": {
+		"concurrently": "^5.1.0",
 		"eslint": "^4.14.0",
 		"eslint-config-logux": "^17.0.0",
 		"eslint-config-standard": "^10.2.1",
