@@ -1,6 +1,7 @@
 <h1 align="center">
-MERN Stack
+BASE-MERN
 </h1>
+<p align="center">A robust but light starter/boilerplate for mern development</p>
 <p align="center">
 MongoDB, Expressjs, React/Redux, Nodejs
 </p>
