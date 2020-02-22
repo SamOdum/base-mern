@@ -1,34 +1,31 @@
-
 import express from 'express';
-import http from 'http';
-import bodyParser from 'body-parser';
 import morgan from 'morgan';
-import mongoose from 'mongoose';
 import cors from 'cors';
-import config from './config';
+import connectDB from './config';
 import Middlewares from './api/middlewares'
 import Authentication from './api/authentication'
 import UserRouter from './user/router'
 
+//** Check that an environmental variable is initialized **
 if(!process.env.JWT_SECRET) {
     const err = new Error('No JWT_SECRET in env variable, check instructions: https://github.com/samodum/base-mern#prepare-your-secret');
     console.error(err);
 }
 
+//** Initialize express **
 const app = express();
 
-mongoose.connect(config.mongoose.uri, { useMongoClient: true })
-.catch(err=>console.error(err));
+//** Hookup Database **
+connectDB();
 
-mongoose.Promise = global.Promise;
-
-// App Setup
-app.use(cors({
-    origin: ['https://www.amazingandyyy.com', 'http://localhost:3000']
-}));
+//** Setup App ** 
+app.use(
+    cors({ origin: ['https://www.samodum.com', 'http://localhost:3000'] })
+);
 app.use(morgan('dev'));
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.json({extended: false}))
+
+//** Define Routes **
 app.get('/ping', (req, res) => res.send('pong'))
 app.get('/', (req, res) => res.json({'source': 'https://github.com/samodum/base-mern'}))
 app.post('/signup', Authentication.signup)
@@ -36,13 +33,11 @@ app.post('/signin', Authentication.signin)
 app.get('/auth-ping', Middlewares.loginRequired, (req, res) => res.send('connected'))
 app.use('/user', Middlewares.loginRequired, UserRouter)
 
-app.use((err, req, res, next) => {
-    console.log('Error:', err.message);
-    res.status(422).json(err.message);
-});
+// app.use((err, req, res, next) => {
+//     console.log('Error:', err.message);
+//     res.status(422).json(err.message);
+// });
 
-// Server Setup
-const port = process.env.PORT || 8000
-http.createServer(app).listen(port, ()=>{
-    console.log(`\x1b[32m`, `Server listening on: ${port}`, `\x1b[0m`)
-});
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log( `\x1b[32m`, `Server started on port ${PORT}`, `\x1b[32m`))

@@ -1,4 +1,4 @@
-import jwt from 'jwt-simple';
+import jwt from 'jsonwebtoken';
 import config from '../config';
 
 export default {

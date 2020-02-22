@@ -42,7 +42,7 @@ You will need to have the following installed to able to run this project locall
 
 ## Client-side usage(PORT: 3000)
 
-Here is how to initialize and run the client aspect
+Here is how to initialize and run the client side
 
 ```terminal
 $ cd client   // go to client folder
@@ -56,7 +56,7 @@ $ npm run start
 
 ## Server-side usage(PORT: 8000)
 
-Here is how to initialize and run the server aspect
+Here is how to initialize and run the server side
 
 ### Prepare your secret
 
@@ -101,17 +101,18 @@ remember to update the file of [client/webpack.prod.js](https://github.com/samod
 
 # Dependencies(tech-stacks)
 
-| Client-side                   | Server-side           |
-| ----------------------------- | --------------------- |
-| axios: ^0.15.3                | bcrypt-nodejs: ^0.0.3 |
-| babel-preset-stage-1: ^6.1.18 | morgan: ^1.7.0        |
-| lodash: ^3.10.1               | cors: ^2.8.1          |
-| react: ^16.2.0                | dotenv: ^2.0.0        |
-| react-dom: ^16.2.0            | express: ^4.14.0      |
-| react-redux: ^4.0.0           | jwt-simple: ^0.5.1    |
-| react-router-dom: ^4.2.2      | mongoose: ^4.7.4      |
-| redux: ^3.7.2                 |
-| redux-thunk: ^2.1.0           |
+| Client-side              | Server-side               |
+| ------------------------ | ------------------------- |
+| axios: ^0.19.2           | bcryptjs: ^2.4.3          |
+| react: ^16.12.0          | cors: ^2.8.5              |
+| react-dom: ^16.12.0      | cross-env: ^7.0.0         |
+| react-redux: ^7.2.0      | dotenv: ^2.0.0            |
+| react-router: ^5.1.2     | express: ^4.17.1          |
+| react-router-dom: ^5.1.2 | express-validator: ^6.4.0 |
+| redux: ^4.0.5            | jsonwebtoken: ^8.5.1      |
+| redux-thunk: ^2.3.0      | mongoose: ^5.9.1          |
+| webpack: ^4.41.6         | morgan: ^1.9.1            |
+| @babel/core: ^7.8.4      | babel-core: ^6.26.3       |
 
 ## Standard
 

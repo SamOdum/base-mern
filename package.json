@@ -1,7 +1,7 @@
 {
-	"name": "mern",
+	"name": "base-mern",
 	"version": "1.0.0",
-	"description": "A MERN starter/boilerplate",
+	"description": "A basic MERN starter/boilerplate",
 	"main": "index.js",
 	"scripts": {
 		"client": "npm run start --prefix client",
