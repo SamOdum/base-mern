@@ -32,7 +32,7 @@ client/
 
 # Local usage
 
-## Prerequirements
+## Pre-requirements
 
 You will need to have the following installed to able to run this project locally.
 
